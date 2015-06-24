@@ -20,21 +20,21 @@ Solution submitted to the AT&T Connectability Challenge: http://connectability.c
 https://github.com/CymaSpace/Cymatic-Lighting
 
 **Step 1:**
-Connect Spectrum Audio Shield to the Arduino (It will fit exactly onto an Arduino Uno)
+Connect Sparkfun Spectrum Audio Shield to the Arduino (it will fit exactly onto an Arduino Uno).
 
 **Step 2:**
-To quickly get up and running follow the steps in the Adafruit Neopixel guide: https://learn.adafruit.com/adafruit-neopixel-uberguide/arduino-library
+To quickly get up and running follow the steps in the Adafruit Neopixel Uberguide: https://learn.adafruit.com/adafruit-neopixel-uberguide/arduino-library
 
-Connect the +5V input on the LED strip to the + (positive) terminal on the power supply (don’t connect to the Arduino), DIN to digital pin 6 on the Arduino/Spectrum Shield, and – (minus or GND) on the strip must connect to both the minus (–) terminal on the DC supply and a GND pin on the Arduino (there are usually several — any will do).
+Connect the +5V input on the LED strip to the + (positive) terminal on the Arduino/Spectrum Shield, DIN to digital pin 5 on the Arduino/Spectrum Shield, and – (minus or GND) on the strip must connect to a GND pin on the Arduino/Spectrum Shield (there are usually several — any will do).
 
 **Step 3:**
-Install Arduino IDE & Arduino NeoPixel Library (again reference Adafruit Neopixel library for more detailed instructions).
+Install Arduino IDE & Arduino NeoPixel Library (again reference Adafruit Neopixel Uberguide for more detailed instructions).
 
 **Step 4:**
-Download and unzip our Arduino software sketch /Cymatic-Lighting into your Arduino Sketches folder.
+Download our software sketch '/Cymatic-Lighting' from Github and unzip the contents into your Arduino Sketches folder.
 
 **Step 5:**
-Upload sketch from Arduino IDE to the Arduino hardware (make sure USB cable is connected to computer if not already!)
+Upload sketch from Arduino software IDE to the Arduino hardware (make sure USB cable is connected to computer if not already!).
 
 **Step 6:**
 Plug in a standard 3.5mm audio cable into either audio jack on the Spectrum Audio Shield and the other end into a sound-source (MP3 Player, Phone, “Handimic” Microphone with line level output etc).

@@ -1,5 +1,5 @@
 #include <Adafruit_NeoPixel.h>
-#define PIN 6
+#define PIN 5
 #define CNT_LIGHTS 60
 
 Adafruit_NeoPixel strip = Adafruit_NeoPixel(CNT_LIGHTS, PIN, NEO_GRB + NEO_KHZ800); 
