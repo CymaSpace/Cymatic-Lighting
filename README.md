@@ -9,14 +9,14 @@ Solution submitted to the AT&T Connectability Challenge: http://connectability.c
 *Our solution requires some additional hardware & software components.*
 
 **Hardware:**
-Arduino UNO (or other compatible microcontroller)
-MSGEQ7 Spectrum Audio Shield: https://www.sparkfun.com/products/13116
-Neopixel (WS2811 or WS2812B) Individually Addressable LED Strip: http://www.adafruit.com/products/1376
+* Arduino UNO (or other compatible microcontroller)
+* MSGEQ7 Spectrum Audio Shield: https://www.sparkfun.com/products/13116
+* Neopixel (WS2811 or WS2812B) Individually Addressable LED Strip: http://www.adafruit.com/products/1376
 
 **Software:**
-Adafruit Neopixel library: https://github.com/adafruit/Adafruit_NeoPixel
-Arduino IDE: https://www.arduino.cc/en/Main/Software
-CymaSpace Cymatic Lighting Software Sketch:
+* Adafruit Neopixel library: https://github.com/adafruit/Adafruit_NeoPixel
+* Arduino IDE: https://www.arduino.cc/en/Main/Software
+* CymaSpace Cymatic Lighting Software Sketch:
 https://github.com/CymaSpace/Cymatic-Lighting
 
 **Step 1:**
