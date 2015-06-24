@@ -1,5 +1,7 @@
 # Cymatic-Lighting
-Open source Cymatic Lighting system for Deaf &amp; Hard-of-Hearing to see music &amp; alerts using Arduino &amp; digital LEDs. 
+Open source Cymatic Lighting system for Deaf &amp; Hard-of-Hearing to see music &amp; alerts using Arduino &amp; digital LEDs.
+
+Video Primer: https://youtu.be/OnrxPVjEhr8
 
 Solution submitted to the AT&T Connectability Challenge: http://connectability.challengepost.com/.
 *Our solution requires some additional hardware & software components.*
