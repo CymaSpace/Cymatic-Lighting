@@ -8,14 +8,12 @@ int analogPinL = 1; // read from multiplexer using analog input 0
 int analogPinR = 0; // read from multiplexer using analog input 0
 int strobePin = 4; // strobe is attached to digital pin 4
 int resetPin = 5; // reset is attached to digital pin 5
-int spectrumValueL[6];
-int spectrumValueR[6]; // to hold a2d values
-int previousSpectrumValueL[6]; // to hold a2d values
-int previousSpectrumValueR[6]; // to hold a2d values
+int spectrumValueL[7];
+int spectrumValueR[7]; // to hold a2d values
+int previousSpectrumValueL[7]; // to hold a2d values
+int previousSpectrumValueR[7]; // to hold a2d values
 int global_brightness = 255; // Sets global brightness, i.e. 64 is 1/4 brightness.
-int useColor[2];
-int num;
-float waveValue;
+int useColor[3];
 int prop[CNT_LIGHTS];
 int prop_history[CNT_LIGHTS];
 int refresh_counter = 0;
@@ -46,22 +44,13 @@ void setup()
 }
  
 void loop() 
-{    
-   runTime();
-}
- 
- 
-void runTime()
 {
  
   digitalWrite(resetPin, HIGH);
   digitalWrite(resetPin, LOW);
-  int changeL = 0;
-  int changeR = 0;
   int changePinL = 0;
   int changePinR = 0;
-  int k,i,r,g,b;
-  float pot_value = 0.0;
+  int k,i;
   
   int use_le = 0;
   int use_ls = ((CNT_LIGHTS/2)-1);
@@ -145,11 +134,11 @@ void runTime()
             
     for (k = 0; k < CNT_LIGHTS; k++)
     {
-      num = prop[k];
+      int num = prop[k];
       //Serial.println(num);
       if(num>=0)
       {
-        get_color();
+        get_color(num);
         strip.setPixelColor( k, useColor[0], useColor[1], useColor[2]);
       }//if
     }//for
@@ -161,47 +150,35 @@ void runTime()
   strip.show();
 }
  
-void get_color()
+void get_color(int num)
 {
-  int r,g,b;
-  
   if(num < 500)
   {
-    r = 0; g = 0; b = 0;
-    
-    useColor[0] = g;
-    useColor[1] = r;
-    useColor[2] = b;
+    useColor[0] = 0;
+    useColor[1] = 0;
+    useColor[2] = 0;
   }
-  
-  if(num>500)
+  else
   {
-    getWaveLength();
-    getRGB();  
-   
-    
+    getRGB(getWaveLength(num));
   }
 }
 
-void getWaveLength()
+float getWaveLength(int num)
 {
   float minVal = 500;
   float maxVal = 4700;
   float minWave = 350;
   float maxWave = 650;
-  maxVal = 0;
-  minVal = 0;
   if(num>maxVal)
     maxVal = num;
     
-  waveValue = ((num - minVal) / (maxVal-minVal) * (maxWave - minWave)) + minWave;
+  return ((num - minVal) / (maxVal-minVal) * (maxWave - minWave)) + minWave;
 }
 
-void getRGB()
+void getRGB(float waveValue)
 {
-  float gamma = .8;
-  float rz, gz, bz;
-  int intsMax = 255;
+  float rz = 0, gz = 0, bz = 0;
   int r,g,b;
   
   if(waveValue >380 && waveValue <=439)
